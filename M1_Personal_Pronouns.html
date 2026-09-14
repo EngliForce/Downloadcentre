@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngliForce Academy: Download Centre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hero-purple-main: #ff5722;
+            --hero-purple-dark: #bf360c;
+            --hero-yellow: #ffb703;
+            --hero-cyan: #b39ddb;
+            --dark-bg: #0b101a;
+            --hero-orange: #ff5722;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            background: radial-gradient(circle at center, #1a102a 0%, #05051a 100%);
+            color: white;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        header {
+            background: var(--hero-purple-main);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            border-bottom: 5px solid var(--hero-yellow);
+        }
+        h1 { 
+            font-family: 'Bangers', cursive; 
+            font-size: 3.5rem; 
+            letter-spacing: 3px; 
+            margin: 0; 
+            text-shadow: 4px 4px 0px var(--hero-purple-dark); 
+        }
+        h2 { 
+            font-family: 'Bangers', cursive; 
+            color: var(--hero-yellow); 
+            font-size: 2.2rem; 
+            margin-top: 10px; 
+            margin-bottom: 20px; 
+            border-bottom: 2px solid rgba(255,255,255,0.1); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+        }
+        main { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            text-align: center; 
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .briefing-box {
+            background: rgba(26, 16, 42, 0.9);
+            border: 2px solid var(--hero-cyan);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            text-align: left;
+        }
+        .explanation-text {
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            margin-bottom: 10px;
+            border-left: 4px solid var(--hero-orange); 
+            padding-left: 20px;
+            background: rgba(255, 87, 34, 0.05); 
+            padding-top: 10px; 
+            padding-bottom: 10px;
+        }
+
+        /* DOWNLOAD BUTTON STYLING */
+        .download-container {
+            margin: 40px 0;
+        }
+        .btn-download {
+            background: var(--hero-yellow);
+            color: var(--dark-bg);
+            border: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-family: 'Bangers', cursive;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 5px solid #d49000;
+            box-shadow: 0 4px 20px rgba(255, 183, 3, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-download:hover {
+            background: #ffe066;
+            color: var(--dark-bg);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 25px rgba(255, 183, 3, 0.6);
+        }
+        .btn-download:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+        }
+
+        /* EFFECTS */
+        .flash-effect { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: white; 
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 1999; 
+        }
+        .boom-text { 
+            position: fixed; 
+            pointer-events: none; 
+            font-family: 'Bangers', cursive; 
+            color: var(--hero-yellow); 
+            font-size: 4rem; 
+            z-index: 2001; 
+            text-shadow: 3px 3px 0px #000; 
+            animation: boomAnim 0.6s ease-out forwards; 
+        }
+        @keyframes boomAnim { 
+            0% { transform: scale(0); opacity: 1; } 
+            100% { transform: scale(1.5); opacity: 0; } 
+        }
+        .shake { animation: shake 0.2s ease-in-out; }
+        @keyframes shake { 
+            0%, 100% { transform: translate(0,0); } 
+            25% { transform: translate(-5px, 5px); } 
+            50% { transform: translate(5px, -5px); } 
+        }
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: rgba(255,255,255,0.5); 
+            font-size: 0.9rem; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="flash-effect" id="flash"></div>
+
+<header>
+    <h1>ENGLIFORCE ACADEMY</h1>
+    <p>Download Centre</p>
+</header>
+
+<main>
+    <section class="briefing-box">
+        <h2>🚨 MISSION: DOWNLOAD YOUR FILE</h2>
+        <div class="explanation-text">
+            Click the button below to download the file to your iPad or computer.
+        </div>
+    </section>
+
+    <div class="download-container">
+        <button class="btn-download" onclick="downloadVoorChromebook(event, 'https://engliforce.github.io/Downloadcentre/M1_Personal_Pronouns.jpg', 'Personal Pronouns')">
+            📥 Download Personal Pronouns
+        </button>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 EngliForce: Make English Your Superpower!</p>
+</footer>
+
+<script>
+    function downloadVoorChromebook(e, fileUrl, fileName) {
+        createExplosion(e, 'DOWNLOAD!');
+        
+        fetch(fileUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                const blobUrl = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = blobUrl;
+                link.download = fileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(blobUrl);
+            })
+            .catch(() => {
+                window.open(fileUrl, '_blank');
+            });
+    }
+
+    function createExplosion(e, message) {
+        const x = e.clientX || window.innerWidth/2; 
+        const y = e.clientY || window.innerHeight/2;
+        const flash = document.getElementById('flash');
+        flash.style.opacity = '0.3'; 
+        document.body.classList.add('shake');
+        setTimeout(() => { 
+            flash.style.opacity = '0'; 
+            document.body.classList.remove('shake'); 
+        }, 200);
+        
+        const txt = document.createElement('div'); 
+        txt.className = 'boom-text'; 
+        txt.innerText = message;
+        txt.style.left = (x - 50) + 'px'; 
+        txt.style.top = (y - 50) + 'px';
+        document.body.appendChild(txt); 
+        setTimeout(() => txt.remove(), 600);
+    }
+</script>
+
+</body>
+</html>
